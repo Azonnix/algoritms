@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	// DELETE GRAITEST VALUE IN EACH ROW
@@ -108,29 +111,82 @@ func main() {
 	//====================================================================================================
 
 	// BINARY SEARCH
-	fmt.Println(search([]int{-1, 0, 3, 5, 9, 12}, 2))
+	// fmt.Println(search([]int{-1, 0, 3, 5, 9, 12}, 2))
+
+	// RELETIVE RANKS
+	// fmt.Println(findRelativeRanks([]int{5, 4, 3, 2, 1}))
+
+	// ARRAY PARTITION
+	fmt.Println(arrayPairSum([]int{6, 2, 6, 5, 1, 2}))
 }
 
-// BINARY SEARCH
-func search(nums []int, target int) int {
-	leftBorder := 0
-	rightBorder := len(nums) - 1
-	var middle int
+// ARRAY PARTITION
+func arrayPairSum(nums []int) int {
+	sort.Slice(nums, func(i, j int) bool {
+		return nums[i] < nums[j]
+	})
 
-	for leftBorder <= rightBorder {
-		middle = (leftBorder + rightBorder) / 2
+	sum := 0
 
-		if nums[middle] == target {
-			return middle
-		} else if nums[middle] > target {
-			rightBorder = middle - 1
-		} else if nums[middle] < target {
-			leftBorder = middle + 1
-		}
+	for i := 0; i < len(nums); i += 2 {
+		sum += nums[i]
 	}
 
-	return -1
+	return sum
 }
+
+// RELETIVE RANKS
+// func findRelativeRanks(score []int) []string {
+// 	relativeRanks := make([]string, len(score))
+// 	newScore := make([]int, len(score))
+
+// 	copy(newScore, score)
+
+// 	sort.Slice(newScore, func(i, j int) bool {
+// 		return newScore[i] > newScore[j]
+// 	})
+
+// 	linkScoreRank := make(map[int]int)
+
+// 	for i, val := range newScore {
+// 		linkScoreRank[val] = i
+// 	}
+
+// 	for i, val := range score {
+// 		if linkScoreRank[val] == 0 {
+// 			relativeRanks[i] = "Gold Medal"
+// 		} else if linkScoreRank[val] == 1 {
+// 			relativeRanks[i] = "Silver Medal"
+// 		} else if linkScoreRank[val] == 2 {
+// 			relativeRanks[i] = "Bronze Medal"
+// 		} else {
+// 			relativeRanks[i] = strconv.Itoa(linkScoreRank[val] + 1)
+// 		}
+// 	}
+
+// 	return relativeRanks
+// }
+
+// BINARY SEARCH
+// func search(nums []int, target int) int {
+// 	leftBorder := 0
+// 	rightBorder := len(nums) - 1
+// 	var middle int
+
+// 	for leftBorder <= rightBorder {
+// 		middle = (leftBorder + rightBorder) / 2
+
+// 		if nums[middle] == target {
+// 			return middle
+// 		} else if nums[middle] > target {
+// 			rightBorder = middle - 1
+// 		} else if nums[middle] < target {
+// 			leftBorder = middle + 1
+// 		}
+// 	}
+
+// 	return -1
+// }
 
 // KEYBOARD ROW
 // func findWords(words []string) []string {
