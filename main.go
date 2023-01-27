@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
-
 func main() {
 	// DELETE GRAITEST VALUE IN EACH ROW
 	// var a = [][]int{{1, 2, 4}, {3, 3, 1}}
@@ -117,23 +112,159 @@ func main() {
 	// fmt.Println(findRelativeRanks([]int{5, 4, 3, 2, 1}))
 
 	// ARRAY PARTITION
-	fmt.Println(arrayPairSum([]int{6, 2, 6, 5, 1, 2}))
+	// fmt.Println(arrayPairSum([]int{6, 2, 6, 5, 1, 2}))
+
+	// RESHAPE THE MATRIX
+	// fmt.Println(matrixReshape([][]int{{1, 2}, {3, 4}}, 1, 4))
+
+	// DISTRIBUTE CANDIES
+	// fmt.Println(distributeCandies([]int{1, 1, 2, 2, 3, 3}))
+
+	// LONGEST HARMONIUS SUBSEQUENCE
 }
+
+// LONGEST HARMONIUS SUBSEQUENCE
+func findLHS(nums []int) int {
+
+}
+
+// DISTRIBUTE CANDIES
+// func distributeCandies(candyType []int) int {
+// 	setCandyType := make(map[int]bool)
+
+// 	for _, ct := range candyType {
+// 		setCandyType[ct] = true
+// 	}
+
+// 	if len(candyType)/2 < len(setCandyType) {
+// 		return len(candyType) / 2
+// 	}
+
+// 	return len(setCandyType)
+// }
+
+// RESHAPE THE MATRIX
+// func matrixReshape(mat [][]int, r int, c int) [][]int {
+// 	l0 := len(mat)
+// 	l1 := len(mat[0])
+// 	l := l0 * l1
+
+// 	if r*c != l {
+// 		return mat
+// 	}
+
+// 	result := make([][]int, r)
+// 	for i := 0; i < r; i++ {
+// 		result[i] = make([]int, c)
+// 	}
+
+// 	for i := 0; i < l; i++ {
+// 		result[i/c][i%c] = mat[i/l1][i%l1]
+// 	}
+
+// 	return result
+// }
+
+// func matrixReshape(mat [][]int, r int, c int) [][]int {
+// 	if len(mat)*len(mat[0]) != r*c {
+// 		return mat
+// 	}
+
+// 	l0 := len(mat)
+// 	l1 := len(mat[0])
+
+// 	result := make([][]int, r)
+// 	for i := 0; i < r; i++ {
+// 		result[i] = make([]int, c)
+// 	}
+
+// 	// count := 0
+
+// 	// if r == 1 || c == 1 {
+// 	// 	count = r * c
+// 	// } else {
+// 	// 	count = r + c
+// 	// }
+
+// 	for i := 0; i < r*c; i++ {
+// 		it := 0
+// 		jt := 0
+// 		if i < l0 {
+// 			if l1 == 1 {
+// 				it = i
+// 			} else {
+// 				it = 0
+// 			}
+// 		} else {
+// 			if l0 == 1 {
+// 				it = 0
+// 			} else {
+// 				it = 1
+// 			}
+// 		}
+// 		if i < l0 {
+// 			if l1 == 1 {
+// 				jt = 0
+// 			} else {
+// 				jt = i
+// 			}
+// 		} else {
+// 			if l0 == 1 {
+// 				jt = i - l0 + 1
+// 			} else {
+// 				jt = i - l0
+// 			}
+// 		}
+
+// 		rit := 0
+// 		rjt := 0
+// 		if i < r {
+// 			if c == 1 {
+// 				rit = i
+// 			} else {
+// 				rit = 0
+// 			}
+// 		} else {
+// 			if r == 1 {
+// 				rit = 0
+// 			} else {
+// 				rit = 1
+// 			}
+// 		}
+// 		if i < r {
+// 			if c == 1 {
+// 				rjt = 0
+// 			} else {
+// 				rjt = i
+// 			}
+// 		} else {
+// 			if r == 1 {
+// 				rjt = i - r + 1
+// 			} else {
+// 				rjt = i - r
+// 			}
+// 		}
+// 		fmt.Println(it, jt, "    ", rit, rjt)
+// 		// result[rit][rjt] = mat[it][jt]
+// 	}
+
+// 	return result
+// }
 
 // ARRAY PARTITION
-func arrayPairSum(nums []int) int {
-	sort.Slice(nums, func(i, j int) bool {
-		return nums[i] < nums[j]
-	})
+// func arrayPairSum(nums []int) int {
+// 	sort.Slice(nums, func(i, j int) bool {
+// 		return nums[i] < nums[j]
+// 	})
 
-	sum := 0
+// 	sum := 0
 
-	for i := 0; i < len(nums); i += 2 {
-		sum += nums[i]
-	}
+// 	for i := 0; i < len(nums); i += 2 {
+// 		sum += nums[i]
+// 	}
 
-	return sum
-}
+// 	return sum
+// }
 
 // RELETIVE RANKS
 // func findRelativeRanks(score []int) []string {
