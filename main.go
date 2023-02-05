@@ -124,9 +124,9 @@ func main() {
 }
 
 // LONGEST HARMONIUS SUBSEQUENCE
-func findLHS(nums []int) int {
+// func findLHS(nums []int) int {
 
-}
+// }
 
 // DISTRIBUTE CANDIES
 // func distributeCandies(candyType []int) int {
