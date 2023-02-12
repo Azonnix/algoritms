@@ -124,11 +124,319 @@ func main() {
 
 	// MERGE TWO SORTED LISTS
 
-	//
+	// REMOVE DUPLICATES FROM SORTED LIST
+
+	// l := initList([]int{1, 1, 2, 3, 3})
+	// printList(l)
+	// r := deleteDuplicates(l)
+	// printList(r)
+
+	// LINKED LIST CYCLE
+	// l := initList([]int{1, })
+
+	// INTERSECTION OF TWO LINKED LISTS
+
+	// REMOVE LINKED LIST ELEMENTS
+	// l := initList([]int{1, 2, 6, 3, 4, 5, 6})
+	// printList(l)
+	// removeElements(l, 1)
+	// printList(l)
+
+	// REVERSE LINKED LIST
+	// l := initList([]int{1, 2, 6, 3, 4, 5, 6})
+	// printList(l)
+	// reverseList(l)
+	// printList(l)
 }
 
-// MERGE TWO SORTED LISTS
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
+func inorderTraversal(root *TreeNode) []int {
+
+}
+
+// REVERSE LINKED LIST
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func initList(arr []int) *ListNode {
+// 	resultNode := new(ListNode)
+// 	r := resultNode
+
+// 	for _, val := range arr {
+// 		r.Next = &ListNode{Val: val, Next: nil}
+// 		r = r.Next
+// 	}
+
+// 	return resultNode.Next
+// }
+
+// func printList(head *ListNode) {
+// 	for head != nil {
+// 		fmt.Print(head, " ")
+// 		head = head.Next
+// 	}
+// 	fmt.Println()
+// }
+
+// func reverseList(head *ListNode) *ListNode {
+// 	if head == nil {
+// 		return nil
+// 	}
+
+// 	currentNode := head
+// 	var resultList *ListNode
+
+// 	for currentNode != nil {
+// 		tempNode := currentNode.Next
+// 		currentNode.Next = resultList
+// 		resultList = currentNode
+// 		currentNode = tempNode
+// 	}
+
+// 	return resultList
+// }
+
+// REMOVE LINKED LIST ELEMENTS
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func initList(arr []int) *ListNode {
+// 	resultNode := new(ListNode)
+// 	r := resultNode
+
+// 	for _, val := range arr {
+// 		r.Next = &ListNode{Val: val, Next: nil}
+// 		r = r.Next
+// 	}
+
+// 	return resultNode.Next
+// }
+
+// func printList(head *ListNode) {
+// 	for head != nil {
+// 		fmt.Print(head, " ")
+// 		head = head.Next
+// 	}
+// 	fmt.Println()
+// }
+
+// func removeElements(head *ListNode, val int) *ListNode {
+// 	var previousNode *ListNode
+// 	currentNode := head
+
+// 	for currentNode != nil {
+// 		if currentNode.Val == val {
+// 			if previousNode != nil {
+// 				previousNode.Next = currentNode.Next
+// 			} else {
+// 				head = currentNode.Next
+// 			}
+// 		} else {
+// 			previousNode = currentNode
+// 		}
+// 		currentNode = currentNode.Next
+// 	}
+
+// 	return head
+// }
+
+// func removeElements(head *ListNode, val int) *ListNode {
+// 	if head == nil {
+// 		return nil
+// 	}
+// 	result := &ListNode{Val: 0, Next: nil}
+// 	var r = result
+// 	for head != nil {
+// 		fmt.Println(r, result)
+// 		if head.Val != val {
+// 			r.Next = &ListNode{Val: head.Val, Next: nil}
+// 			r = r.Next
+// 		}
+// 		head = head.Next
+// 	}
+
+// 	return result.Next
+// }
+
+// func removeElements(head *ListNode, val int) *ListNode {
+// 	if head == nil {
+// 		return nil
+// 	}
+// 	// h := &ListNode{Val: 0, Next: head}
+// 	h := new(ListNode)
+// 	h.Next = head
+// 	for h.Next != nil {
+// 		fmt.Println(h, h.Next, h.Next.Next)
+// 		if h.Next.Val == val {
+// 			h.Next = h.Next.Next
+// 		} else {
+// 			h = h.Next
+// 		}
+// 	}
+// 	return head
+// }
+
+// INTERSECTION OF TWO LINKED LISTS
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func initList(arr []int) *ListNode {
+// 	resultNode := new(ListNode)
+// 	r := resultNode
+
+// 	for _, val := range arr {
+// 		r.Next = &ListNode{Val: val, Next: nil}
+// 		r = r.Next
+// 	}
+
+// 	return resultNode.Next
+// }
+
+// func printList(head *ListNode) {
+// 	for head != nil {
+// 		fmt.Print(head.Val, " ")
+// 		head = head.Next
+// 	}
+// 	fmt.Println()
+// }
+
+// func getIntersectionNode(headA, headB *ListNode) *ListNode {
+// 	check := make(map[*ListNode]int)
+
+// 	for headA != nil {
+// 		check[headA] = 1
+// 		headA = headA.Next
+// 	}
+
+// 	for headB != nil {
+// 		if check[headB] == 1 {
+// 			return headB
+// 		}
+// 		headB = headB.Next
+// 	}
+
+// 	return nil
+// }
+
+// LINKED LIST CYCLE
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func initList(arr []int) *ListNode {
+// 	resultNode := new(ListNode)
+// 	r := resultNode
+
+// 	for _, val := range arr {
+// 		r.Next = &ListNode{Val: val, Next: nil}
+// 		r = r.Next
+// 	}
+
+// 	return resultNode.Next
+// }
+
+// func printList(head *ListNode) {
+// 	for head != nil {
+// 		fmt.Print(head.Val, " ")
+// 		head = head.Next
+// 	}
+// 	fmt.Println()
+// }
+
+// func hasCycle(head *ListNode) bool {
+// 	check := make(map[*ListNode]int)
+
+// 	for head != nil {
+// 		if check[head] == 0 {
+// 			check[head] = 1
+// 		} else {
+// 			return true
+// 		}
+// 		head = head.Next
+// 	}
+
+// 	return false
+// }
+
+// REMOVE DUPLICATES FROM SORTED LIST
+// Definition for singly-linked list.
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func initList(arr []int) *ListNode {
+// 	resultNode := new(ListNode)
+// 	r := resultNode
+
+// 	for _, val := range arr {
+// 		r.Next = &ListNode{Val: val, Next: nil}
+// 		r = r.Next
+// 	}
+
+// 	return resultNode.Next
+// }
+
+// func printList(head *ListNode) {
+// 	for head != nil {
+// 		fmt.Print(head.Val, " ")
+// 		head = head.Next
+// 	}
+// 	fmt.Println()
+// }
+
+// func deleteDuplicates(head *ListNode) *ListNode {
+// 	if head == nil {
+// 		return nil
+// 	}
+
+// 	tempNode := head
+
+// 	for tempNode.Next != nil {
+// 		if tempNode.Val == tempNode.Next.Val {
+// 			new := tempNode.Next.Next
+// 			tempNode.Next = nil
+// 			tempNode.Next = new
+// 		} else {
+// 			tempNode = tempNode.Next
+// 		}
+// 	}
+
+// 	return head
+// }
+
+// func deleteDuplicates(head *ListNode) *ListNode {
+// 	if head == nil {
+// 		return nil
+// 	}
+
+// 	resultNode := &ListNode{Val: head.Val, Next: nil}
+// 	r := resultNode
+
+// 	for head != nil {
+// 		if r.Val != head.Val {
+// 			r.Next = &ListNode{Val: head.Val, Next: nil}
+// 			r = r.Next
+// 		}
+// 		head = head.Next
+// 	}
+
+// 	return resultNode
+// }
+
+// MERGE TWO SORTED LISTS
 // Definition for singly-linked list.
 // type ListNode struct {
 // 	Val  int
