@@ -123,43 +123,44 @@ func main() {
 	// LONGEST HARMONIUS SUBSEQUENCE
 
 	// MERGE TWO SORTED LISTS
+
 }
 
 // MERGE TWO SORTED LISTS
 
 // Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
 
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-	var resultNode *ListNode
-	r := resultNode
+// func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+// 	var resultNode *ListNode
+// 	r := resultNode
 
-	for list1 != nil || list2 != nil {
-		if list1 == nil {
-			resultNode = list2
-			list2 = list2.Next
-			continue
-		}
-		if list2 == nil {
-			resultNode = list1
-			list1 = list1.Next
-			continue
-		}
+// 	for list1 != nil || list2 != nil {
+// 		if list1 == nil {
+// 			resultNode = list2
+// 			list2 = list2.Next
+// 			continue
+// 		}
+// 		if list2 == nil {
+// 			resultNode = list1
+// 			list1 = list1.Next
+// 			continue
+// 		}
 
-		if list1.Val < list2.Val {
-			resultNode = list1
-			list1 = list1.Next
-		} else {
-			resultNode = list2
-			list2 = list2.Next
-		}
-	}
+// 		if list1.Val < list2.Val {
+// 			resultNode = list1
+// 			list1 = list1.Next
+// 		} else {
+// 			resultNode = list2
+// 			list2 = list2.Next
+// 		}
+// 	}
 
-	return r
-}
+// 	return r
+// }
 
 // LONGEST HARMONIUS SUBSEQUENCE
 // func findLHS(nums []int) int {
